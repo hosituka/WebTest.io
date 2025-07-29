@@ -1,0 +1,90 @@
+﻿/*ブラウザごとのユーザーエージェントスタイルシートを統一することが目的のスタイルシートをlayerとして読み込んでいる、*/
+@import url("Normalize.css") layer(normalize);
+
+@layer normalize, Layout,typography;
+/*margin paddingなど位置的なcss*/
+@layer Layout {
+    nav {
+        position: fixed;
+        width:100%;
+        height: 50px;
+        z-index: 2;
+    }
+    nav ul {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    nav ul li a {
+        display: block;
+        padding: 10px 10px; /* PC表示でのpaddingを少し調整 */
+    }
+
+    header {
+        position: relative;
+        width: 100%;
+        height: 280px;
+    }
+    #HeaderBackground {
+        position: absolute;
+        height: 280px;
+        z-index: 0;
+    }
+    #HeaderLogo {
+        position: absolute;
+        width: 165px;
+        left: 10px;
+        bottom: 0px;
+        z-index: 1;
+    }
+    header h1 {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        margin: 0px;
+        padding: 10px;
+    }
+
+    main {
+        padding: 0px 10px;
+    }
+    main p{
+        margin: 0px;
+        padding:10px 0px;
+    }
+}
+
+/*文字のデザインに着目したcss*/
+@layer typography{
+    nav {
+        opacity: 0.9;
+        background-color: #333;
+    }
+
+    nav ul {
+        list-style: none;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+        background-color: #555;
+    }
+
+
+    header h1 {
+        font-size: 60px;
+        color: white;
+    }
+
+}
+
