@@ -1,4 +1,4 @@
-﻿/*ブラウザごとのユーザーエージェントスタイルシートを統一することが目的のスタイルシートをlayerとして読み込んでいる、*/
+﻿/*ユーザーエージェントスタイルシートを統一するスタイルシートをlayerとして読み込んでいる、*/
 @import url("Normalize.css") layer(normalize);
 
 @layer normalize, Layout,typography;
@@ -8,7 +8,7 @@
         position: fixed;
         width:100%;
         height: 50px;
-        z-index: 2;
+        z-index: 3;
     }
     nav ul {
         width: 100%;
@@ -32,6 +32,8 @@
     #HeaderBackground {
         position: absolute;
         height: 280px;
+        width: 100%;
+        object-fit: cover;
         z-index: 0;
     }
     #HeaderLogo {
@@ -47,6 +49,7 @@
         right: 0px;
         margin: 0px;
         padding: 10px;
+        z-index: 2;
     }
 
     main {
