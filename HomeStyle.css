@@ -87,6 +87,11 @@
     header h1 {
         font-size: 60px;
         color: white;
+        text-shadow: 2px 2px 15px green;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: black;
+        /*文字→輪郭から輪郭→文字の順で描画する*/
+        paint-order: stroke;
     }
 
 }
