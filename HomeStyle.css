@@ -6,7 +6,8 @@
 :root {
     --sectionBorder: 20px;
 }
-/*margin paddingなど位置的なcss*/
+
+/*margin paddingなどコンテンツの配置に関するレイヤー*/
 @layer Layout {
     body{
         height:2000px;
@@ -45,12 +46,14 @@
     }
     #HeaderLogo {
         position: absolute;
-        width: 165px;
         left: 10px;
         bottom: 0px;
         z-index: 1;
     }
-    header h1 {
+    #HeaderLogo img{
+        width:165px;
+    }
+    #HeaderTitle{
         position: absolute;
         bottom: 0px;
         right: 0px;
@@ -79,7 +82,7 @@
 
 }
 
-/*文字のデザインに着目したcss*/
+/*コンテンツ内のデザインに着目したレイヤー*/
 @layer typography{
     body{
         background-color: ghostwhite;
@@ -106,7 +109,7 @@
     }
 
 
-    header h1 {
+    #HeaderTitle {
         font-size: 60px;
         color: white;
         text-shadow: 2px 2px 15px green;
@@ -116,13 +119,36 @@
         paint-order: stroke;
     }
 
-    section{
+    section {
         background-color: white;
-    }
-
-    section{
-        line-height:30px
+        line-height: 30px
     }
 
 }
+/*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
+@media (max-width:790px) {
+    #HeaderLogo {
+        /* 1. 親要素の左端から50%の位置に移動 */
+        left: 50%;
+        /* 2. 要素自身の幅の50%分、左にずらす */
+        transform: translateX(-50%);
+        bottom: 50px
+    }
+
+    #HeaderLogo img {
+        width: 165px;
+    }
+
+    #HeaderTitle {
+        /* 1. 親要素の左端から50%の位置に移動 */
+        left: 50%;
+        /* 2. 要素自身の幅の50%分、左にずらす */
+        transform: translateX(-50%);
+        /* 3. 折り返しさせずにコンテンツ分の幅を確保する。
+        */
+        width: max-content;
+        font-size: 35px
+    }
+}
+
 
