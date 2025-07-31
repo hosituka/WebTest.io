@@ -3,6 +3,9 @@
 
 @layer normalize, Layout,typography;
 /*margin paddingなど位置的なcss*/
+:root {
+    --sectionBorder: 20px;
+}
 @layer Layout {
     nav {
         position: fixed;
@@ -53,16 +56,27 @@
     }
 
     main {
-        padding: 0px 10px;
+        margin: var(--sectionBorder) 0px 0px 0px;
     }
-    main p{
+
+
+    section {
+        margin: 0px var(--sectionBorder) var(--sectionBorder) var(--sectionBorder);
+    }
+
+    section p {
         margin: 0px;
-        padding:10px 0px;
+        padding: 10px 0px;
     }
+
 }
 
 /*文字のデザインに着目したcss*/
 @layer typography{
+    body{
+        background-color: ghostwhite;
+    }
+
     nav {
         opacity: 0.9;
         background-color: #333;
@@ -90,8 +104,12 @@
         text-shadow: 2px 2px 15px green;
         -webkit-text-stroke-width: 3px;
         -webkit-text-stroke-color: black;
-        /*文字→輪郭から輪郭→文字の順で描画する*/
+        /*文字→輪郭から輪郭→文字の順で描画させる*/
         paint-order: stroke;
+    }
+
+    section{
+        background-color: white;
     }
 
 }
