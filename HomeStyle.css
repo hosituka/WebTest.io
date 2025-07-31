@@ -2,11 +2,15 @@
 @import url("Normalize.css") layer(normalize);
 
 @layer normalize, Layout,typography;
-/*margin paddingなど位置的なcss*/
+/*マジックナンバー防ぐよう*/
 :root {
     --sectionBorder: 20px;
 }
+/*margin paddingなど位置的なcss*/
 @layer Layout {
+    body{
+        height:2000px;
+    }
     nav {
         position: fixed;
         width:100%;
@@ -110,6 +114,10 @@
 
     section{
         background-color: white;
+    }
+
+    section{
+        line-height:30px
     }
 
 }
