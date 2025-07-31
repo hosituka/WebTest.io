@@ -70,7 +70,11 @@
 
     section p {
         margin: 0px;
-        padding: 10px 0px;
+        padding: 10px 10px;
+    }
+    section h2{
+        margin:0px;
+        padding:20px 10px;
     }
 
 }
