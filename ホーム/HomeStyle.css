@@ -1,0 +1,156 @@
+﻿/*ユーザーエージェントスタイルシートを統一するスタイルシートをlayerとして読み込んでいる、*/
+@import url("Normalize.css") layer(normalize);
+
+/*マジックナンバー防ぐよう*/
+:root {
+    --sectionBorder: 20px;
+}
+
+/*margin paddingなどコンテンツの配置に関するレイヤー*/
+@layer Layout {
+    body{
+        height:2000px;
+    }
+    main {
+        display: flow-root;
+    }
+    .nav {
+        position: fixed;
+        width:100%;
+        height: 50px;
+        z-index: 3;
+    }
+    .nav ul {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav ul li a {
+        display: block;
+        padding: 10px 10px; /* PC表示でのpaddingを少し調整 */
+    }
+
+    header {
+        position: relative;
+        width: 100%;
+        height: 280px;
+    }
+    #HeaderBackground {
+        position: absolute;
+        height: 280px;
+        width: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    #HeaderLogo {
+        position: absolute;
+        left: 10px;
+        bottom: 0px;
+        z-index: 1;
+    }
+    #HeaderLogo img{
+        width:165px;
+    }
+    #HeaderTitle{
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        margin: 0px;
+        padding: 10px;
+        z-index: 2;
+    }
+
+    main {
+        margin: var(--sectionBorder) 0px 0px 0px;
+    }
+
+
+    section {
+        margin: 0px var(--sectionBorder) var(--sectionBorder) var(--sectionBorder);
+    }
+
+    section p {
+        margin: 0px;
+        padding: 10px 10px;
+    }
+    section h2{
+        margin:0px;
+        padding:20px 10px;
+    }
+
+}
+
+/*コンテンツ内のデザインに着目したレイヤー*/
+@layer typography{
+    body{
+        background-color: ghostwhite;
+    }
+
+    .nav {
+        opacity: 0.9;
+        background-color: #333;
+    }
+
+    .nav ul {
+        list-style: none;
+    }
+
+    .nav ul li a {
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .nav ul li a:hover {
+        background-color: #555;
+    }
+
+
+    #HeaderTitle {
+        font-size: 60px;
+        color: white;
+        text-shadow: 2px 2px 15px green;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: black;
+        /*文字→輪郭から輪郭→文字の順で描画させる*/
+        paint-order: stroke;
+    }
+
+    section {
+        background-color: white;
+        line-height: 30px
+    }
+
+}
+/*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
+@media (max-width:790px) {
+    #HeaderLogo {
+        /* 1. 親要素の左端から50%の位置に移動 */
+        left: 50%;
+        /* 2. 要素自身の幅の50%分、左にずらす */
+        transform: translateX(-50%);
+        bottom: 50px
+    }
+
+    #HeaderLogo img {
+        width: 165px;
+    }
+
+    #HeaderTitle {
+        /* 1. 親要素の左端から50%の位置に移動 */
+        left: 50%;
+        /* 2. 要素自身の幅の50%分、左にずらす */
+        transform: translateX(-50%);
+        /* 3. 折り返しさせずにコンテンツ分の幅を確保する。
+        */
+        width: max-content;
+        font-size: 35px
+    }
+}
+
+

@@ -1,0 +1,73 @@
+﻿/*ユーザーエージェントスタイルシートを統一するスタイルシートをlayerとして読み込んでいる、*/
+@import url("Normalize.css") layer(normalize);
+
+@layer normalize, Layout,typography;
+/*マジックナンバー防ぐよう*/
+:root {
+}
+
+/*margin paddingなどコンテンツの配置に関するレイヤー*/
+@layer Layout {
+	body {
+		margin:0;
+		height: 2000px;
+	}
+	main{
+		display:flow-root;
+	}
+
+	.nav {
+		position: fixed;
+		width: 100%;
+		height: 50px;
+		z-index: 3;
+	}
+
+	.nav ul {
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.nav ul li a {
+		display: block;
+		padding: 10px 10px; /* PC表示でのpaddingを少し調整 */
+	}
+
+}
+
+/*コンテンツ内のデザインに着目したレイヤー*/
+@layer typography {
+	body {
+		background-color: ghostwhite;
+	}
+
+	.nav {
+		opacity: 0.9;
+		background-color: #333;
+	}
+
+	.nav ul {
+		list-style: none;
+	}
+
+	.nav ul li a {
+		font-size: 20px;
+		color: white;
+		text-decoration: none;
+		transition: background-color 0.3s;
+	}
+
+	.nav ul li a:hover {
+		background-color: #555;
+	}
+
+
+}
+/*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
+@media (max-width:790px) {
+}
