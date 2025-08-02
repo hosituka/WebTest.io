@@ -61,7 +61,7 @@
 
 }
 
-/*コンテンツ内のデザインに着目したレイヤー*/
+/*要素のデザインに着目したレイヤー*/
 @layer typography{
 
     #HeaderTitle {
@@ -79,9 +79,11 @@
         line-height: 30px
     }
 
-    section h2{
-        background-color:dimgrey;
-        color:white;
+    section h2 {
+        background-color: dimgrey;
+        border-left: solid 4px black;
+        border-bottom: solid 2px black;
+        color: white;
     }
 }
 /*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
