@@ -11,7 +11,7 @@
 		height: 2000px;
 	}
 	main{
-		display:flow-root;
+		display:flow-root
 	}
 
 	.nav {
@@ -36,6 +36,8 @@
 		padding: 10px 10px; /* PC表示でのpaddingを少し調整 */
 	}
 
+
+
 }
 
 /*コンテンツ内のデザインに着目したレイヤー*/
@@ -45,6 +47,7 @@
 	}
 
 	.nav {
+		top:0px;
 		opacity: 0.9;
 		background-color: #333;
 	}

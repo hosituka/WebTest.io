@@ -18,6 +18,7 @@
     }
     #HeaderBackground {
         position: absolute;
+        top:0px;
         height: 280px;
         width: 100%;
         object-fit: cover;
@@ -33,30 +34,28 @@
         width:165px;
     }
     #HeaderTitle{
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
-        margin: 0px;
-        padding: 10px;
-        z-index: 2;
+        position:absolute;
+        margin:0px;
+        right:10px;
+        bottom:10px;
+        z-index:1;
     }
 
     main {
         margin: var(--sectionBorder) 0px 0px 0px;
     }
-
-
-    section {
+    .section {
         margin: 0px var(--sectionBorder) var(--sectionBorder) var(--sectionBorder);
     }
 
-    section p {
+    .section p {
         margin: 0px;
         padding: 10px 10px;
     }
-    section h2{
-        margin:0px;
-        padding:5px 10px;
+
+    .section h2 {
+        margin: 0px;
+        padding: 5px 10px;
     }
 
 }
@@ -73,20 +72,21 @@
         /*文字→輪郭から輪郭→文字の順で描画させる*/
         paint-order: stroke;
     }
-
-    section {
+    .section {
         background-color: white;
         line-height: 30px
     }
 
-    section h2 {
+    .section h2 {
         background-color: dimgrey;
         border-left: solid 4px black;
         border-bottom: solid 2px black;
         color: white;
     }
+
+
 }
-/*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
+/*横幅が790px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
 @media (max-width:790px) {
     #HeaderLogo {
         /* 1. 親要素の左端から50%の位置に移動 */
@@ -110,6 +110,7 @@
         width: max-content;
         font-size: 35px
     }
+
 }
 
 
