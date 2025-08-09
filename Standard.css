@@ -8,7 +8,7 @@
 @layer Layout {
 	body {
 		margin:0;
-		height: 2000px;
+		height: 10000px;
 	}
 	main{
 		display:flow-root
@@ -69,3 +69,4 @@
 /*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
 @media (max-width:790px) {
 }
+
