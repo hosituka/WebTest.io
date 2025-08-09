@@ -6,7 +6,7 @@
 @layer normalize, standard, Layout, typography;
 /*マジックナンバー防ぐよう*/
 :root {
-    --sectionBorder: 20px;
+    --SectionMargin: 20px;
 }
 
 /*margin paddingなどコンテンツの配置に関するレイヤー*/
@@ -42,10 +42,14 @@
     }
 
     main {
-        margin: var(--sectionBorder) 0px 0px 0px;
+        margin-top: var(--SectionMargin);
     }
-    .section {
-        margin: 0px var(--sectionBorder) var(--sectionBorder) var(--sectionBorder);
+
+    .SectionContainer {
+        display: flex;
+        flex-direction: column;
+        margin: 0px var(--SectionMargin) 0px var(--SectionMargin);
+        gap: var(--SectionMargin);
     }
 
     .section p {
@@ -62,7 +66,9 @@
 
 /*要素のデザインに着目したレイヤー*/
 @layer typography{
-
+    body {
+        background-color: floralwhite;
+    }
     #HeaderTitle {
         font-size: 60px;
         color: white;
