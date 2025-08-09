@@ -6,8 +6,7 @@
 @layer normalize, standard, Layout, typography;
 /*マジックナンバー防ぐよう*/
 :root {
-    --SectionBorder: 20px;
-    --SectionH2BorderRadius: 20px;
+    --sectionBorder: 20px;
 }
 
 /*margin positionなどコンテンツの配置に関するレイヤー*/
@@ -45,19 +44,19 @@
     }
     main {
         position: relative;
-        margin-top: var(--SectionBorder);
+        margin-top: var(--sectionBorder);
     }
     /*縦並び用*/
     .SectionContainer1 {
         display: flex;
         flex-direction: column;
-        margin: 0px var(--SectionBorder) 0px var(--SectionBorder);
-        gap: var(--SectionBorder);
+        margin: 0px var(--sectionBorder) 0px var(--sectionBorder);
+        gap: var(--sectionBorder);
     }
     /*横並び用*/
     .SectionContainer2 {
         display: flex;
-        gap: var(--SectionBorder);
+        gap: var(--sectionBorder);
     }
 
     .section p {
@@ -77,26 +76,23 @@
         background-color: floralwhite;
     }
     .section {
-        background-color: rgb(59, 99, 91);
-        border-radius: var(--SectionH2BorderRadius) var(--SectionH2BorderRadius) 0px 0px;
+        background-color: white;
         line-height: 30px
     }
 
     .section p{
         padding: 10px 10px;
-        color:white;
     }
 
     .section h2 {
         padding: 5px 10px;
         background-color: dimgrey;
-        text-align:center;
-        letter-spacing:5px;
-        border-radius: var(--SectionH2BorderRadius) var(--SectionH2BorderRadius) 0px 0px;
+        border-left: solid 4px black;
+        border-bottom: solid 2px black;
         color: white;
     }
     #HeaderBackground {
-       filter: sepia(100%) hue-rotate(65deg) saturate(400%) brightness(45%);
+       filter: sepia(100%) hue-rotate(65deg) saturate(300%) brightness(60%);
     }
     #HeaderTitle1 {
         font-size: 60px;
@@ -110,8 +106,8 @@
     #HeaderTitle2 {
         font-size: 40px;
         letter-spacing: 10px;
-        color: rgb(31, 109, 18);
-        background-color: floralwhite;
+        color: white;
+        background-color: rgb(87, 87, 87, 0.80);
         padding: 5px 20px;
         -webkit-text-stroke-width: 5px;
         -webkit-text-stroke-color: black;
@@ -129,7 +125,7 @@
         font-size:35px;
     }
     #HeaderTitle2 {
-        font-size: 30px;
+        font-size: 25px;
         bottom: 45px;
     }
     .SectionContainer2 {
