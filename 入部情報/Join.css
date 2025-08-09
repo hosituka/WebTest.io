@@ -93,6 +93,7 @@
         text-align:center;
         letter-spacing:5px;
         border-radius: var(--SectionH2BorderRadius) var(--SectionH2BorderRadius) 0px 0px;
+        border-bottom: 2px solid black;
         color: white;
     }
     #HeaderBackground {
