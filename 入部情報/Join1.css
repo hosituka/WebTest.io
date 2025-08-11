@@ -105,6 +105,7 @@
 
     .section h2 {
         padding: 5px 10px;
+        text-align:center;
         background-color: dimgrey;
         border-left: solid 4px black;
         border-bottom: solid 2px black;
@@ -152,3 +153,4 @@
     }
 
 }
+
