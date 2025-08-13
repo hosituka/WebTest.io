@@ -36,7 +36,12 @@
 		padding: 10px 10px; /* PC表示でのpaddingを少し調整 */
 	}
 
-
+	footer{
+		height:50px;
+	}
+	footer h2{
+		margin:0px;
+	}
 
 }
 
@@ -64,10 +69,14 @@
 	.nav ul li a:hover {
 		background-color: #555;
 	}
-
+	footer{
+		background-color:black;
+	}
+	footer h2{
+		color:white;
+	}
 
 }
 /*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
 @media (max-width:790px) {
 }
-

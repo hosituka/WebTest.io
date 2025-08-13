@@ -80,11 +80,13 @@
     }
     .section {
         background-color: white;
-        line-height: 30px
+        line-height: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
     }
 
     .section h2 {
-        background-color: dimgrey;
+        background-color: dimgray;
         border-left: solid 4px black;
         border-bottom: solid 2px black;
         color: white;

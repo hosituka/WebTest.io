@@ -95,8 +95,9 @@
     }
     .section {
         background-color: white;
-        line-height: 30px ;
+        line-height: 30px;
         border-radius: var(--SectionH2BorderRadius) var(--SectionH2BorderRadius) 0px 0px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .section p{
@@ -153,4 +154,3 @@
     }
 
 }
-

@@ -9,14 +9,56 @@
 
 }
 
-/*margin paddingなどコンテンツの配置に関するレイヤー*/
+/*margin positionなどコンテンツの配置に関するレイヤー*/
 @layer Layout {
+    header {
+        position:relative;
+        height:120px;
+        width:100%;
+        background-color:white;
+    }
 
+    header h1 {
+        position:absolute;
+        display:block;
+        width:100%;
+        margin: 0px;
+        bottom:15px;
+    }
+
+    main{
+        position:relative;
+    }
+
+    .SnsContainer{
+        display:flex;
+        margin-top:30px;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:30px;
+    }
+    .SnsIntroduction{
+        width:325px;
+        height:360px;
+    }
 }
 
 /*コンテンツ内のデザインに着目したレイヤー*/
 @layer typography {
-
+    body {
+        background-color: floralwhite;
+    }
+    header {
+        border-bottom: 1px solid gray;
+    }
+    header h1{
+        text-align:center;
+    }
+    .SnsIntroduction {
+        background-color: white;
+        border-radius:20px;
+        box-shadow:0px 4px 8px rgba(0,0,0,0.1);
+    }
 
 }
 /*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
