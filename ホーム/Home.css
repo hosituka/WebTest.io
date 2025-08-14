@@ -3,42 +3,33 @@
 /*webページ全体で共通するスタイルをレイヤーとして読み込んでいる*/
 @import url("../Standard.css") layer(standard);
 
-@layer normalize, standard, Layout, typography;
+@layer normalize, standard, Layout, appearance;
 /*マジックナンバー防ぐよう*/
 :root {
     --SectionMargin: 20px;
+    --Z_level_1: 1;
+    --Z_level_2: 2;
 }
 
 /*margin paddingなどコンテンツの配置に関するレイヤー*/
 @layer Layout {
     header {
         position: relative;
-        width: 100%;
-        height: 280px;
     }
     #HeaderBackground {
         position: absolute;
         top:0px;
-        height: 280px;
-        width: 100%;
-        object-fit: cover;
-        z-index: 0;
     }
     #HeaderLogo {
         position: absolute;
         left: 10px;
         bottom: 0px;
-        z-index: 1;
     }
-    #HeaderLogo img{
-        width:165px;
-    }
-    #HeaderTitle{
-        position:absolute;
-        margin:0px;
-        right:10px;
-        bottom:10px;
-        z-index:1;
+    #HeaderTitle {
+        position: absolute;
+        margin: 0px;
+        right: 10px;
+        bottom: 10px;
     }
 
     main {
@@ -65,11 +56,30 @@
 }
 
 /*要素のデザインに着目したレイヤー*/
-@layer typography{
+@layer appearance {
     body {
         background-color: floralwhite;
     }
+    header {
+        width: 100%;
+        height: 280px;
+    }
+    #HeaderBackground {
+        width: 100%;
+        height: 280px;
+        z-index: var(--Z_level_1);
+        object-fit: cover;
+    }
+    #HeaderLogo {
+        z-index: var(--Z_level_2);
+    }
+
+    #HeaderLogo img {
+        width: 165px;
+    }
+
     #HeaderTitle {
+        z-index: var(--Z_level_2);
         font-size: 60px;
         color: white;
         text-shadow: 2px 2px 15px green;
@@ -78,11 +88,11 @@
         /*文字→輪郭から輪郭→文字の順で描画させる*/
         paint-order: stroke;
     }
+
     .section {
         background-color: white;
         line-height: 30px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
     }
 
     .section h2 {
@@ -91,8 +101,6 @@
         border-bottom: solid 2px black;
         color: white;
     }
-
-
 }
 /*横幅が790px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
 @media (max-width:790px) {

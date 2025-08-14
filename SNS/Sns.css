@@ -3,7 +3,7 @@
 /*webページ全体で共通するスタイルをレイヤーとして読み込んでいる*/
 @import url("../Standard.css") layer(standard);
 
-@layer normalize, standard, Layout, typography;
+@layer normalize, standard, Layout, appearance;
 /*マジックナンバー防ぐよう*/
 :root {
 
@@ -13,15 +13,11 @@
 @layer Layout {
     header {
         position:relative;
-        height:120px;
-        width:100%;
-        background-color:white;
     }
 
     header h1 {
         position:absolute;
         display:block;
-        width:100%;
         margin: 0px;
         bottom:15px;
     }
@@ -38,28 +34,40 @@
         gap:30px;
     }
     .SnsIntroduction{
-        width:325px;
-        height:360px;
+        text-align:center;
     }
 }
 
 /*コンテンツ内のデザインに着目したレイヤー*/
-@layer typography {
+@layer appearance {
     body {
         background-color: floralwhite;
     }
+
     header {
         border-bottom: 1px solid gray;
-    }
-    header h1{
-        text-align:center;
-    }
-    .SnsIntroduction {
+        height: 120px;
+        width: 100%;
         background-color: white;
-        border-radius:20px;
-        box-shadow:0px 4px 8px rgba(0,0,0,0.1);
     }
 
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .SnsIntroduction {
+        width: 325px;
+        height: 360px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .SnsIntroduction img {
+        width: 200px;
+        height: 200px;
+    }
 }
 /*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
 @media (max-width:790px) {
