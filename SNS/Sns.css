@@ -3,7 +3,7 @@
 /*webページ全体で共通するスタイルをレイヤーとして読み込んでいる*/
 @import url("../Standard.css") layer(standard);
 
-@layer normalize, standard, Layout, appearance;
+@layer normalize, standard, Layout, appearance, animation;
 /*マジックナンバー防ぐよう*/
 :root {
 
@@ -33,8 +33,17 @@
         flex-wrap:wrap;
         gap:30px;
     }
-    .SnsIntroduction{
-        text-align:center;
+    .SnsIntroduction {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+    .SnsIntroduction h2 {
+        margin: 0px;
+    }
+    .SnsIntroduction a{
+        margin-top:20px;
+        padding:20px;
     }
 }
 
@@ -62,12 +71,34 @@
         background-color: white;
         border-radius: 20px;
         box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        transition:transform 0.3s,box-shadow 0.3s;
+    }
+    .SnsIntroduction h2{
+        padding:15px;
+        color:rgb(0, 86, 179);
     }
 
     .SnsIntroduction img {
         width: 200px;
         height: 200px;
     }
+    .SnsIntroduction a {
+        background-color: #007bff;
+        color: white;
+        border-radius: 20px;
+        text-decoration: none;
+    }
+}
+/*疑似クラスやkeyframesなどによるアニメーションを記述*/
+@layer animation{
+    .SnsIntroduction:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+    }
+    .SnsIntroduction a:hover {
+        background-color: rgb(59, 96, 206);
+    }
+
 }
 /*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
 @media (max-width:790px) {
