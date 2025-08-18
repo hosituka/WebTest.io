@@ -70,13 +70,15 @@
         text-align: center;
         font-size: 50px;
         width: calc(100% + 200px);
-        padding: 10px 0px;
+        padding: 7px 0px;
         background-color: rgba(255, 255, 255, 0.5);
         -webkit-text-stroke-width: 3px;
         -webkit-text-stroke-color: white;
         /*文字→輪郭から輪郭→文字の順で描画させる*/
         paint-order: stroke;
         color: black;
+        border-bottom:3px solid white;
+        border-top:3px solid white;
     }
     main{
         background-color:floralwhite;
@@ -86,7 +88,7 @@
 @media (max-width:790px) {
     header #Title1 {
         font-size:25px;
-        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(-50px) translateX(-90px);
+        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(-50px) translateX(-80px);
     }
 
     header #Title2 {
