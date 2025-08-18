@@ -83,7 +83,7 @@
 /*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
 @media (max-width:790px) {
     header #Title1 {
-        font-size:30px;
+        font-size:25px;
         transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(-50px) translateX(-90px);
     }
 
