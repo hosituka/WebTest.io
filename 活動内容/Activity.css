@@ -24,6 +24,8 @@
         align-items: center;
         justify-content: center;
         z-index: 1;
+        /*Title2クラスがはみ出すため、スクロール領域が拡大するのを防ぐ用*/
+        overflow: hidden;
     }
     header canvas{
         position:absolute;
