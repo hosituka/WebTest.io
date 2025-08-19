@@ -24,7 +24,7 @@
         align-items: center;
         justify-content: center;
         z-index: 1;
-        /*Title2クラスがはみ出すため、スクロール領域が拡大するのを防ぐ用*/
+        /*Title2クラスがはみ出しにより、スクロール領域が拡大するのを防ぐ用*/
         overflow: hidden;
     }
     header canvas{
@@ -45,13 +45,39 @@
         z-index: 3;
     }
     main{
+        overflow:hidden;
         position:relative;
-        z-index:4;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
     }
+    main #SoftSection {
+    }
+    main #SoftSection h2 {
+        margin:0px;
+    }
+    main #SoftSection p {
+        margin: 0px;
+    }
+
+    main #HardSection {
+    }
+    main #HardSection h2 {
+        margin:0px;
+    }
+    main #HardSection p {
+       margin:0px;
+    }
+
+
+
 }
 
 /*コンテンツ内の色やサイズなどに着目したレイヤー*/
 @layer appearance {
+    body {
+        background-color: floralwhite;
+    }
     header {
         height: 280px;
         background-color:black;
@@ -81,13 +107,48 @@
         border-top:3px solid white;
     }
     main{
-        background-color:floralwhite;
     }
+    main #HardSection {
+        width: 100%;
+        background-color: white;
+        border:10px solid orange;
+        box-sizing: border-box;
+    }
+    main #HardSection h2{
+        color:orange;
+        padding:10px;
+        background-color:black;
+        background-color:rgb(0, 0, 0)
+    }
+    main #HardSection p {
+        padding:10px;
+        line-height: 30px;
+    }
+
+    main #SoftSection {
+        width: 100%;
+        background-color: black;
+        color:white;
+        border: 10px solid deepskyblue;
+        box-sizing: border-box;
+    }
+    main #SoftSection h2 {
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
+        color: deepskyblue;
+    }
+    main #SoftSection p {
+        padding: 10px;
+        line-height:30px;
+    }
+
+
+
 }
 /*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
 @media (max-width:790px) {
     header #Title1 {
-        font-size:25px;
+        font-size: 25px;
         transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(-50px) translateX(-80px);
     }
 
