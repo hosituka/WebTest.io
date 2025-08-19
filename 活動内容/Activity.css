@@ -44,6 +44,7 @@
         margin: 0px;
         z-index: 3;
     }
+
     main{
         overflow:hidden;
         position:relative;
@@ -51,22 +52,35 @@
         flex-direction:column;
         align-items:center;
     }
-    main #SoftSection {
+    main #SSC{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
     }
-    main #SoftSection h2 {
-        margin:0px;
+    main #SSC .SS {
+        top:20px;
     }
-    main #SoftSection p {
+    main #SSC .SS h2 {
+        margin: 0px;
+    }
+    main #SSC .SS p {
         margin: 0px;
     }
 
-    main #HardSection {
+    main #HSC {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
-    main #HardSection h2 {
-        margin:0px;
+    main #HSC .HS {
     }
-    main #HardSection p {
-       margin:0px;
+    main #HSC .HS h2 {
+        margin: 0px;
+    }
+    main #HSC .HS p {
+        margin: 0px;
     }
 
 
@@ -108,40 +122,52 @@
     }
     main{
     }
-    main #HardSection {
+    main #SSC {
         width: 100%;
+        border: 20px solid white;
         background-color: white;
-        border:10px solid orange;
         box-sizing: border-box;
     }
-    main #HardSection h2{
-        color:orange;
-        padding:10px;
-        background-color:black;
-        background-color:rgb(0, 0, 0)
-    }
-    main #HardSection p {
-        padding:10px;
-        line-height: 30px;
-    }
-
-    main #SoftSection {
+    main #SSC .SS {
         width: 100%;
         background-color: black;
-        color:white;
-        border: 10px solid deepskyblue;
+        color: white;
+        border: 1px solid black;
         box-sizing: border-box;
     }
-    main #SoftSection h2 {
+    main #SSC .SS h2 {
         padding: 10px;
         background-color: rgb(255, 255, 255);
         color: deepskyblue;
     }
-    main #SoftSection p {
+    main #SSC .SS p {
         padding: 10px;
-        line-height:30px;
+        line-height: 30px;
     }
 
+    main #HSC {
+        width: 100%;
+        border: 20px solid black;
+        background-color:black;
+        box-sizing: border-box;
+    }
+    main #HSC .HS {
+        width: 100%;
+        background-color: white;
+        border: 1px solid white;
+        box-sizing: border-box;
+    }
+
+    main #HSC .HS h2 {
+        color: orange;
+        padding: 10px;
+        background-color: black;
+    }
+
+    main #HSC .HS p {
+        padding: 10px;
+        line-height: 30px;
+    }
 
 
 }
