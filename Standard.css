@@ -8,7 +8,6 @@
 @layer Layout {
 	body {
 		margin:0;
-		height: 10000px;
 	}
 	main{
 		display:flow-root
@@ -16,16 +15,11 @@
 
 	.nav {
 		position: fixed;
-		width: 100%;
-		height: 50px;
 		z-index: 1000;
 	}
 
 	.nav ul {
-		width: 100%;
-		height: 100%;
 		margin: 0px;
-		padding: 0px;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -33,7 +27,6 @@
 
 	.nav ul li a {
 		display: block;
-		padding: 10px 10px; /* PC表示でのpaddingを少し調整 */
 	}
 
 	footer{
@@ -47,21 +40,30 @@
 
 /*コンテンツ内のデザインに着目したレイヤー*/
 @layer typography {
-
+	body {
+		height: 10000px;
+		width: 100%;
+	}
 	.nav {
-		top:0px;
+		width: 100vw;
+		height: 50px;
+		top: 0px;
 		opacity: 0.9;
 		background-color: #333;
-		border-bottom:2px solid black;
+		border-bottom: 2px solid black;
 	}
 
 	.nav ul {
+		width: 100vw;
+		height: 100%;
+		padding: 0px;
 		list-style: none;
 	}
 
 	.nav ul li a {
 		font-size: 20px;
 		color: white;
+		padding: 10px 10px; /* PC表示でのpaddingを少し調整 */
 		text-decoration: none;
 		transition: background-color 0.3s;
 	}
