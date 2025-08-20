@@ -15,7 +15,6 @@
     --hiraki_doai:1;
     --width:100
 }
-
 /*margin transformなどコンテンツ外に関するレイヤー*/
 @layer Layout {
     header {
@@ -47,40 +46,35 @@
 
     main{
         overflow:hidden;
-        position:relative;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
     }
-    main #SSC{
+    main #SSB{
         display:flex;
         flex-direction:column;
         align-items:center;
         gap:20px;
     }
-    main #SSC .SS {
-        top:20px;
+    main #SSB .SS {
     }
-    main #SSC .SS h2 {
+    main #SSB .SS h2 {
         margin: 0px;
     }
-    main #SSC .SS p {
-        margin: 0px;
+    main #SSB .SS p {
+        margin: 10px;
     }
 
-    main #HSC {
+    main #HSB {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
-    main #HSC .HS {
+    main #HSB .HS {
     }
-    main #HSC .HS h2 {
+    main #HSB .HS h2 {
         margin: 0px;
     }
-    main #HSC .HS p {
-        margin: 0px;
+    main #HSB .HS p {
+        margin: 10px;
     }
 
 
@@ -89,7 +83,7 @@
 
 /*コンテンツ内の色やサイズなどに着目したレイヤー*/
 @layer appearance {
-    body {
+    html {
         background-color: floralwhite;
     }
     header {
@@ -120,52 +114,46 @@
         border-bottom:3px solid white;
         border-top:3px solid white;
     }
-    main{
-    }
-    main #SSC {
-        width: 100%;
-        border: 20px solid white;
+    main #SSB {
+        width: auto;
         background-color: white;
-        box-sizing: border-box;
+        padding:20px;
     }
-    main #SSC .SS {
+    main #SSB .SS {
         width: 100%;
         background-color: black;
         color: white;
         border: 1px solid black;
         box-sizing: border-box;
     }
-    main #SSC .SS h2 {
+    main #SSB .SS h2 {
         padding: 10px;
         background-color: rgb(255, 255, 255);
         color: deepskyblue;
     }
-    main #SSC .SS p {
-        padding: 10px;
+    main #SSB .SS p {
         line-height: 30px;
     }
 
-    main #HSC {
-        width: 100%;
-        border: 20px solid black;
+    main #HSB {
+        width: auto;
         background-color:black;
-        box-sizing: border-box;
+        padding:20px;
     }
-    main #HSC .HS {
+    main #HSB .HS {
         width: 100%;
         background-color: white;
         border: 1px solid white;
         box-sizing: border-box;
     }
 
-    main #HSC .HS h2 {
+    main #HSB .HS h2 {
         color: orange;
         padding: 10px;
         background-color: black;
     }
 
-    main #HSC .HS p {
-        padding: 10px;
+    main #HSB .HS p {
         line-height: 30px;
     }
 
