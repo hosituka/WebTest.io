@@ -21,32 +21,35 @@
     #HeaderBackground {
         position: absolute;
         top: 0px;
+        z-index: var(--Z_level_1);
     }
 
     #HeaderTitle1 {
         position: absolute;
-        margin: 0px;
         left: 50%;
         transform: translateX(-50%);
         bottom: 115px;
+        z-index: var(--Z_level_3);
     }
     #HeaderTitle2 {
         position: absolute;
-        margin: 0px;
         left: 50%;
         transform: translateX(-50%);
         bottom: 25px;
+        z-index: var(--Z_level_3);
     }
     #TopLeftGear {
         position: absolute;
         top: 0px;
-        left:0px;
+        left: 0px;
+        z-index: var(--Z_level_2);
     }
 
     #BottomRightGear {
         position: absolute;
         bottom: 0px;
         right: 0px;
+        z-index: var(--Z_level_2);
     }
 
     main {
@@ -66,20 +69,19 @@
         gap: var(--SectionBorder);
     }
 
-    .section p {
-        margin: 0px;
+    .plain-text{
     }
 
-    .section h2 {
-        margin: 0px;
+    .section h3 {
     }
+    
 
 
 }
 
 /*コンテンツ内のデザインに着目したレイヤー*/
 @layer appearance {
-    body {
+    html {
         background-color: floralwhite;
     }
 
@@ -91,49 +93,12 @@
         height: 280px;
         width: 100%;
         object-fit: cover;
-        z-index: var(--Z_level_1);
     }
+
+
 
     #HeaderTitle1 {
         width: max-content;
-        z-index: var(--Z_level_3);
-    }
-
-    #HeaderTitle2 {
-        width: max-content;
-        z-index: var(--Z_level_3);
-    }
-
-    #TopLeftGear {
-        z-index: var(--Z_level_2);
-    }
-
-    #BottomRightGear {
-        z-index: var(--Z_level_2);
-    }
-
-    .section {
-        background-color: white;
-        line-height: 30px;
-        border-radius: var(--SectionH2BorderRadius) var(--SectionH2BorderRadius) 0px 0px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .section p {
-        padding: 10px 10px;
-    }
-
-    .section h2 {
-        padding: 5px 10px;
-        text-align: center;
-        background-color: dimgrey;
-        border-left: solid 4px black;
-        border-bottom: solid 2px black;
-        border-radius: var(--SectionH2BorderRadius) var(--SectionH2BorderRadius) 0px 0px;
-        color: white;
-    }
-
-    #HeaderTitle1 {
         font-size: 60px;
         color: white;
         text-shadow: 2px 2px 15px blue;
@@ -144,6 +109,7 @@
     }
 
     #HeaderTitle2 {
+        width: max-content;
         font-size: 40px;
         letter-spacing: 10px;
         color: white;
@@ -156,8 +122,36 @@
         border: 0px solid dimgray;
         border-radius: 40px;
     }
+    .section {
+        background-color: white;
+        border-radius: var(--SectionH2BorderRadius) var(--SectionH2BorderRadius) 0px 0px;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .SectionTitle {
+        font-size: 24px;
+        padding: 5px 10px;
+        text-align: center;
+        background-color: dimgrey;
+        border-left: solid 4px black;
+        border-bottom: solid 2px black;
+        border-radius: var(--SectionH2BorderRadius) var(--SectionH2BorderRadius) 0px 0px;
+        color: white;
+    }
+
+    .plain-text {
+        padding: 10px 10px;
+        line-height: 30px;
+    }
+
+    .info-text {
+        font-size: 30px;
+        margin: 15px;
+    }
+
 }
-/*横幅が790px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
+/*横幅が790px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
 @media (max-width:790px) {
     #HeaderTitle1{
         font-size:35px;
@@ -166,6 +160,11 @@
         font-size: 25px;
         bottom: 45px;
     }
+
+    .info-text {
+        font-size: 20px;
+    }
+
     .SectionContainer2 {
         flex-direction: column;
     }
