@@ -54,7 +54,6 @@
 /*コンテンツ内のデザインに着目したレイヤー*/
 @layer appearance {
 	body {
-		height: 10000px;
 		width: 100%;
 	}
 
