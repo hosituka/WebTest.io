@@ -5,11 +5,13 @@
 
 @layer normalize, standard, Layout, appearance;
 
-@property --ScreenWidth{
-    syntax:"<length>";
-    inherits:true;
-    initial-value:100vw;
-}
+/*  ここに省略された名前の正式名称を記す
+
+    HSC=HardSectionContainer
+    SSC=SoftSectionContainr
+    HS=HardSection
+    SS=SoftSection
+*/
 /*マジックナンバー防ぐよう*/
 :root {
     --hiraki_doai:1;
@@ -33,49 +35,35 @@
     header #Title1 {
         position: absolute;
         transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(-65px) translateX(-150px);
-        margin: 0px;
         z-index: 3;
     }
 
     header #Title2 {
         position: absolute;
         transform: rotateZ(calc(-1 * atan2(280px, 100vw)));
-        margin: 0px;
         z-index: 3;
     }
 
-    main{
-        overflow:hidden;
-    }
-    main #SSB{
+    #SSC{
         display:flex;
         flex-direction:column;
         align-items:center;
         gap:20px;
     }
-    main #SSB .SS {
-    }
-    main #SSB .SS h2 {
-        margin: 0px;
-    }
-    main #SSB .SS p {
-        margin: 10px;
-    }
-
-    main #HSB {
+    #HSC {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
-    main #HSB .HS {
+
+    .ContentWrapper{
+        display:flex;
+        justify-content:center;
+        align-items:center;
     }
-    main #HSB .HS h2 {
-        margin: 0px;
-    }
-    main #HSB .HS p {
-        margin: 10px;
-    }
+
+
 
 
 
@@ -114,52 +102,52 @@
         border-bottom:3px solid white;
         border-top:3px solid white;
     }
-    main #SSB {
+
+    #SSC {
         width: auto;
         background-color: white;
         padding:20px;
     }
-    main #SSB .SS {
+    #SSC .SS {
         width: 100%;
         background-color: black;
         color: white;
         border: 1px solid black;
-        box-sizing: border-box;
         box-shadow: 4px 4px 8px rgba(0,191,255,0.4); /*deepskyblueの透明度を0.7*/
     }
-    main #SSB .SS h2 {
+    .SoftSectionTitle {
         padding: 10px;
         background-color: rgb(255, 255, 255);
         color: deepskyblue;
     }
-    main #SSB .SS p {
-        line-height: 30px;
-    }
-
-    main #HSB {
+    #HSC {
         width: auto;
         background-color:black;
         padding:20px;
     }
-    main #HSB .HS {
+    #HSC .HS {
         width: 100%;
         background-color: white;
         border: 1px solid white;
         box-shadow: 4px 4px 8px rgba(255,165,0,0.9);/*orangeの透明度を0.7*/
-        box-sizing: border-box;
     }
-
-    main #HSB .HS h2 {
+    .HardSectionTitle {
         color: orange;
         padding: 10px;
         background-color: black;
     }
 
-    main #HSB .HS p {
+    .ContentWrapper img {
+        width: 300px;
+        padding:10px;
+    }    
+    .ContentWrapper .SectionP {
         line-height: 30px;
+        padding:10px;
     }
+    .HardSectionImg{
 
-
+    }
 }
 /*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
 @media (max-width:790px) {
@@ -170,6 +158,10 @@
 
     header #Title2 {
         font-size: 35px;
+    }
+
+    .ContentWrapper{
+        flex-direction:column;
     }
 
 }
