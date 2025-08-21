@@ -116,6 +116,7 @@
         box-shadow: 4px 4px 8px rgba(0,191,255,0.4); /*deepskyblueの透明度を0.7*/
     }
     .SoftSectionTitle {
+        text-align:center;
         padding: 10px;
         background-color: rgb(255, 255, 255);
         color: deepskyblue;
@@ -132,6 +133,7 @@
         box-shadow: 4px 4px 8px rgba(255,165,0,0.9);/*orangeの透明度を0.7*/
     }
     .HardSectionTitle {
+        text-align:center;
         color: orange;
         padding: 10px;
         background-color: black;
