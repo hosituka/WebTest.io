@@ -125,6 +125,7 @@
         color: white;
         border: 1px solid black;
         box-sizing: border-box;
+        box-shadow: 4px 4px 8px rgba(0,191,255,0.4); /*deepskyblueの透明度を0.7*/
     }
     main #SSB .SS h2 {
         padding: 10px;
@@ -144,6 +145,7 @@
         width: 100%;
         background-color: white;
         border: 1px solid white;
+        box-shadow: 4px 4px 8px rgba(255,165,0,0.9);/*orangeの透明度を0.7*/
         box-sizing: border-box;
     }
 
@@ -159,7 +161,7 @@
 
 
 }
-/*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
+/*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
 @media (max-width:790px) {
     header #Title1 {
         font-size: 25px;
