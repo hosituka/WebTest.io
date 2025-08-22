@@ -1,0 +1,168 @@
+﻿/*ユーザーエージェントスタイルシートを統一するスタイルシートをlayerとして読み込んでいる、*/
+@import url("../Normalize.css") layer(normalize);
+/*webページ全体で共通するスタイルをレイヤーとして読み込んでいる*/
+@import url("../Standard.css") layer(standard);
+
+@layer normalize, standard, Layout, appearance;
+/*マジックナンバー防ぐよう*/
+:root {
+    --SectionBorder: 20px;
+    --SectionH2BorderRadius: 20px;
+    --Z_level_1: 1;
+    --Z_level_2: 2;
+    --Z_level_3: 3;
+}
+
+/*margin positionなどコンテンツの配置に関するレイヤー*/
+@layer Layout {
+    header{
+        position:relative;
+    }
+    #HeaderBackground {
+        position: absolute;
+        top: 0px;
+        z-index: var(--Z_level_1);
+    }
+
+    #HeaderTitle1 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 115px;
+        z-index: var(--Z_level_3);
+    }
+    #HeaderTitle2 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 25px;
+        z-index: var(--Z_level_3);
+    }
+    #TopLeftGear {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: var(--Z_level_2);
+    }
+
+    #BottomRightGear {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        z-index: var(--Z_level_2);
+    }
+
+    main {
+        position: relative;
+        margin-top: var(--SectionBorder);
+    }
+    /*縦並び用*/
+    .SectionContainer1 {
+        display: flex;
+        flex-direction: column;
+        margin: 0px var(--SectionBorder) 0px var(--SectionBorder);
+        gap: var(--SectionBorder);
+    }
+    /*横並び用*/
+    .SectionContainer2 {
+        display: flex;
+        gap: var(--SectionBorder);
+    }
+
+}
+
+/*コンテンツ内のデザインに着目したレイヤー*/
+@layer appearance {
+    html {
+        background-color: floralwhite;
+    }
+
+    header {
+        height: 280px;
+    }
+
+    #HeaderBackground {
+        height: 280px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+
+
+    #HeaderTitle1 {
+        font-family: sans-serif;
+        width: max-content;
+        font-size: 60px;
+        color: white;
+        text-shadow: 2px 2px 15px blue;
+        -webkit-text-stroke-width: 5px;
+        -webkit-text-stroke-color: black;
+        /*文字→輪郭から輪郭→文字の順で描画させる*/
+        paint-order: stroke;
+    }
+
+    #HeaderTitle2 {
+        font-family: sans-serif;
+        width: max-content;
+        font-size: 40px;
+        letter-spacing: 10px;
+        color: white;
+        background-color: rgb(87, 87, 87, 0.80);
+        padding: 5px 20px;
+        -webkit-text-stroke-width: 5px;
+        -webkit-text-stroke-color: black;
+        /*文字→輪郭から輪郭→文字の順で描画させる*/
+        paint-order: stroke;
+        border: 0px solid dimgray;
+        border-radius: 40px;
+    }
+    .section {
+        background-color: white;
+        border-radius: var(--SectionH2BorderRadius) var(--SectionH2BorderRadius) 0px 0px;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .SectionTitle {
+        font-family: sans-serif;
+        font-size: 24px;
+        padding: 5px 10px;
+        text-align: center;
+        background-color: dimgrey;
+        border-left: solid 4px black;
+        border-bottom: solid 2px black;
+        border-radius: var(--SectionH2BorderRadius) var(--SectionH2BorderRadius) 0px 0px;
+        color: white;
+    }
+
+    .plain-text {
+        padding: 10px 10px;
+        line-height: 30px;
+    }
+
+    .info-text {
+        font-size: 30px;
+        margin: 15px;
+        font-weight:bold
+    }
+
+}
+/*横幅が790px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
+@media (max-width:790px) {
+    #HeaderTitle1{
+        font-size:35px;
+    }
+    #HeaderTitle2 {
+        font-size: 25px;
+        bottom: 45px;
+    }
+
+    .info-text {
+        font-size: 20px;
+    }
+
+    .SectionContainer2 {
+        flex-direction: column;
+    }
+
+}
