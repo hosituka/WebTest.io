@@ -75,7 +75,7 @@
 
 }
 
-/*コンテンツ内の色やサイズなどに着目したレイヤー*/
+/*コンテンツ内の色やサイズなどに着目したレイヤー 主にある要素の内側に関する設定がある。*/
 @layer appearance {
     html {
         background-color: floralwhite;
@@ -149,20 +149,29 @@
         padding: 10px;
         background-color: black;
     }
+    .ContentWrapper{
+        padding:20px;
+    }
 
-    .ContentWrapper img {
-        width: 300px;
-        padding:10px;
-    }    
     .ContentWrapper .SectionP {
         line-height: 30px;
         padding:10px;
     }
-    .HardSectionImg{
-
+    .ContentWrapper .SoftSectionImg {
+        width: 250px;
+        border: 1px solid black;
+        outline: 7px solid white;
+        border-radius: 8px 8px;
     }
+    .ContentWrapper .HardSectionImg {
+        width: 250px;
+        border: 1px solid white;
+        outline:7px solid black;
+        border-radius:8px 8px;
+    }
+
 }
-/*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
+/*横幅が790px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
 @media (max-width:790px) {
     header #Title1 {
         font-size: 25px;
