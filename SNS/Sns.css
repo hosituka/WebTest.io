@@ -15,7 +15,7 @@
         position:relative;
     }
 
-    header #title {
+    header #Title {
         position: absolute;
         display: block;
         bottom: 15px;
@@ -102,3 +102,4 @@
 /*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
 @media (max-width:790px) {
 }
+
