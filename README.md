@@ -3,7 +3,7 @@
 * WEBページはHOME,ActivityInfo(活動内容),JoinInfo(入部情報),SNSの合計4つあります。
 * 中でもHOMEがトップページ(1番最初に訪れるページ)です。
 ## Webのレイアウトに関係ないファイルについて
-* index.html:Home.html(トップページ)にリダイレクトするための奴
+* index.html:Home/Home.html(トップページ)にリダイレクトするための奴
 * _config.yml:サイトマップを自動生成するために必要な呪文、詳しいことは知らん
 * google73381482e2abefac.html:グーグル検索に引っかかるようにするために訪れたサイトGoggle Search Console では認証が求められるが、その証明書みたいなやつ　良く分からん
 * README.md:このサイトのフォルダ群についての説明文が載ってる奴、つまりあなたが今見ている説明の本体
