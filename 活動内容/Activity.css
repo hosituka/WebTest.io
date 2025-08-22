@@ -90,6 +90,7 @@
     }
     header #Title1 {
         font-family: sans-serif;
+        width:max-content;
         font-size: 40px;
         letter-spacing: 10px;
         color: white;
@@ -165,7 +166,7 @@
 @media (max-width:790px) {
     header #Title1 {
         font-size: 25px;
-        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(calc(-50% - 50px)) translateX(calc(-50% - 100px));
+        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(calc(-50% - 50px)) translateX(calc(-50% - 70px));
     }
 
     header #Title2 {
