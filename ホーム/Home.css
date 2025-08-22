@@ -27,7 +27,6 @@
     }
     #HeaderTitle {
         position: absolute;
-        margin: 0px;
         right: 10px;
         bottom: 10px;
     }
@@ -44,12 +43,10 @@
     }
 
     .section p {
-        margin: 0px;
         padding: 10px 10px;
     }
 
     .section h2 {
-        margin: 0px;
         padding: 5px 10px;
     }
 
@@ -57,7 +54,7 @@
 
 /*要素のデザインに着目したレイヤー*/
 @layer appearance {
-    body {
+    html {
         background-color: floralwhite;
     }
     header {
@@ -79,6 +76,7 @@
     }
 
     #HeaderTitle {
+        font-family: sans-serif;
         z-index: var(--Z_level_2);
         font-size: 60px;
         color: white;
@@ -91,18 +89,22 @@
 
     .section {
         background-color: white;
-        line-height: 30px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .section h2 {
+    .section .SectionTitle {
+        font-family: sans-serif;
         background-color: dimgray;
         border-left: solid 4px black;
         border-bottom: solid 2px black;
         color: white;
     }
+
+    .section p {
+        line-height: 30px;
+    }
 }
-/*横幅が790px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
+/*横幅が790px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
 @media (max-width:790px) {
     #HeaderLogo {
         /* 1. 親要素の左端から50%の位置に移動 */

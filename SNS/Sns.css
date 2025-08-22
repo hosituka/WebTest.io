@@ -15,11 +15,10 @@
         position:relative;
     }
 
-    header h1 {
-        position:absolute;
-        display:block;
-        margin: 0px;
-        bottom:15px;
+    header #title {
+        position: absolute;
+        display: block;
+        bottom: 15px;
     }
 
     main{
@@ -49,7 +48,7 @@
 
 /*コンテンツ内のデザインに着目したレイヤー*/
 @layer appearance {
-    body {
+    html {
         background-color: floralwhite;
     }
 
@@ -60,7 +59,8 @@
         background-color: white;
     }
 
-    header h1 {
+    header #Title {
+        font-family: sans-serif;
         width: 100%;
         text-align: center;
     }
@@ -99,6 +99,6 @@
     }
 
 }
-/*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとタイポグラフィーの区分はない*/
+/*横幅が635px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
 @media (max-width:790px) {
 }

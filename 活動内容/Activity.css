@@ -21,9 +21,6 @@
 @layer Layout {
     header {
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         z-index: 1;
         /*Title2クラスがはみ出しにより、スクロール領域が拡大するのを防ぐ用*/
         overflow: hidden;
@@ -34,13 +31,22 @@
     }
     header #Title1 {
         position: absolute;
-        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(-65px) translateX(-150px);
+        top: 50%;
+        left: 50%;
+        transform-origin: left;
+        /*140pxはheaderのheight=280　⇒headerのheight/2=280/2=140の流れで出た*/
+        /*rotateZで回転させてから y と xの変形関数を適用させている。
+        */
+        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(calc(-50% - 65px)) translateX(calc(-50% - 140px));
         z-index: 3;
     }
 
     header #Title2 {
         position: absolute;
-        transform: rotateZ(calc(-1 * atan2(280px, 100vw)));
+        top: 50%;
+        left: 50%;
+        transform-origin: left;
+        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(-50%) translateX(-50%);
         z-index: 3;
     }
 
@@ -83,12 +89,14 @@
         height:100%;
     }
     header #Title1 {
+        font-family: sans-serif;
         font-size: 40px;
         letter-spacing: 10px;
         color: white;
     }
 
     header #Title2 {
+        font-family: sans-serif;
         text-align: center;
         font-size: 50px;
         width: calc(100% + 200px);
@@ -99,8 +107,8 @@
         /*文字→輪郭から輪郭→文字の順で描画させる*/
         paint-order: stroke;
         color: black;
-        border-bottom:3px solid white;
-        border-top:3px solid white;
+        border-bottom: 3px solid white;
+        border-top: 3px solid white;
     }
 
     #SSC {
@@ -116,7 +124,8 @@
         box-shadow: 4px 4px 8px rgba(0,191,255,0.4); /*deepskyblueの透明度を0.7*/
     }
     .SoftSectionTitle {
-        text-align:center;
+        font-family: sans-serif;
+        text-align: center;
         padding: 10px;
         background-color: rgb(255, 255, 255);
         color: deepskyblue;
@@ -133,7 +142,8 @@
         box-shadow: 4px 4px 8px rgba(255,165,0,0.9);/*orangeの透明度を0.7*/
     }
     .HardSectionTitle {
-        text-align:center;
+        font-family: sans-serif;
+        text-align: center;
         color: orange;
         padding: 10px;
         background-color: black;
@@ -155,7 +165,7 @@
 @media (max-width:790px) {
     header #Title1 {
         font-size: 25px;
-        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(-50px) translateX(-80px);
+        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(calc(-50% - 50px)) translateX(calc(-50% - 100px));
     }
 
     header #Title2 {
