@@ -60,7 +60,7 @@
     .SectionContainer1 {
         display: flex;
         flex-direction: column;
-        margin: 0px var(--SectionBorder) 0px var(--SectionBorder);
+        margin: var(--SectionBorder);
         gap: var(--SectionBorder);
     }
     /*横並び用*/
@@ -68,7 +68,9 @@
         display: flex;
         gap: var(--SectionBorder);
     }
-
+    .plain-text {
+        margin: 10px 10px;
+    }
 }
 
 /*コンテンツ内のデザインに着目したレイヤー*/
@@ -136,7 +138,6 @@
     }
 
     .plain-text {
-        padding: 10px 10px;
         line-height: 30px;
     }
 
