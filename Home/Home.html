@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="Home.css">
     </head>
     <body>
-        <nav class="nav">
+        <nav id="nav">
             <ul>
                 <li><a href="../Home/Home.html">ホーム</a></li>
                 <li><a href="../ActivityInfo/Activity.html">活動内容</a></li>
@@ -16,35 +16,37 @@
 
             </ul>
         </nav>
+        <div id="NoFixedContainer">
+            <header>
+                <picture id="HeaderLogo">
+                    <source media="(max-width:790px)" srcset="素材/背景透過3.png">
+                    <img src="素材/背景透過.png" alt="部活動のロゴ">
+                </picture>
+                <img id="HeaderBackground" src="素材/ホーム用2.jpg" alt="header用の画像">
+                <h1 id="HeaderTitle">ハード・ソフト開発部</h1>
+            </header>
 
-        <header>
-            <picture id="HeaderLogo">
-                <source media="(max-width:790px)" srcset="素材/背景透過3.png">
-                <img src="素材/背景透過.png" alt="部活動のロゴ">
-            </picture>
-            <img id="HeaderBackground" src="素材/ホーム用2.jpg" alt="header用の画像">
-            <h1 id="HeaderTitle">ハード・ソフト開発部</h1>
-        </header>
+            <main class="SectionContainer">
+                <section class="section">
+                    <h2 class="SectionTitle">ハード・ソフト開発部とは？</h2>
+                    <p>
+                        ハード部門、ソフト部門、二つの部門からなる部活です。<strong>阿部寛に似た</strong>、<strong>イケメンで</strong>、<strong>かっこいい部長</strong>が皆を出迎えてくれます。<br>
+                        風通しが良く、アットホームな部活ですので、ぜひ、ご参加の検討よろしくお願いします。
+                    </p>
+                </section>
 
-        <main class="SectionContainer">
-            <section class="section">
-                <h2 class="SectionTitle">ハード・ソフト開発部とは？</h2>
-                <p>
-                    ハード部門、ソフト部門、二つの部門からなる部活です。<strong>阿部寛に似た</strong>、<strong>イケメンで</strong>、<strong>かっこいい部長</strong>が皆を出迎えてくれます。<br>
-                    風通しが良く、アットホームな部活ですので、ぜひ、ご参加の検討よろしくお願いします。
-                </p>
-            </section>
+                <section class="section">
+                    <h2 class="SectionTitle">活動について</h2>
+                    <p>
+                        ハード部門ではCPUなどの機械の作成を軸にはんだや製図等の技術を磨きます<br>
+                        ソフト部門ではソフト開発を基にプログラミングを身に着けます。詳細につきましては活動内容を参照
+                    </p>
+                </section>
+            </main>
+            <footer id="footer">
+                <p id="Copyright">© 2025 ハードソフト開発部 All Rights Reserved.<p>
+            </footer>
 
-            <section class="section">
-                <h2 class="SectionTitle">活動について</h2>
-                <p>
-                    ハード部門ではCPUなどの機械の作成を軸にはんだや製図等の技術を磨きます<br>
-                    ソフト部門ではソフト開発を基にプログラミングを身に着けます。詳細につきましては活動内容を参照
-                </p>
-            </section>
-        </main>
-        <footer>
-            <p id="Copyright">© 2025 ハードソフト開発部 All Rights Reserved.<p>
-        </footer>
+        </div>
     </body>
 </html>

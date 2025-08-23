@@ -25,32 +25,32 @@
 }
 /*margin paddingなどコンテンツの配置に関するレイヤー*/
 @layer Layout {
-	main{
-		display:flow-root
-	}
-
-	.nav {
+	#nav {
 		position: fixed;
 		z-index: 1000;
 		top: 0px;
 	}
 
-	.nav ul {
+	#nav ul {
 		margin: 0px;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 	}
 
-	.nav ul li a {
+	#nav ul li a {
 		display: block;
 	}
-	footer{
-		position:relative;
+	#NoFixedContainer{
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
 	}
-
-	#Copyright {
-		position: absolute;
+	main{
+		flex:1;
+	}
+	#footer #Copyright {
+		position: relative;
 		top: 50%;
 		left: 50%;
 		transform: translateY(-50%) translateX(-50%);
@@ -59,11 +59,7 @@
 
 /*コンテンツ内のデザインに着目したレイヤー*/
 @layer appearance {
-	body {
-		width: 100%;
-	}
-
-	.nav {
+	#nav {
 		width: 100%;
 		height: 50px;
 		opacity: 0.9;
@@ -71,29 +67,32 @@
 		border-bottom: 2px solid black;
 	}
 
-	.nav ul {
+	#nav ul {
 		width: 100%;
 		height: 100%;
 		list-style: none;
 	}
 
-	.nav ul li a {
+	#nav ul li a {
 		font-size: 20px;
 		color: white;
 		padding: 10px 10px; /* PC表示でのpaddingを少し調整 */
 		text-decoration: none;
 		transition: background-color 0.3s;
 	}
+	#NoFixedContainer{
+		min-height:100vh;
+	}
 
-
-	footer {
+	#footer {
+		width:100%;
 		height:50px;
 		border-top:1px solid black;
 		background-color: white;
 		opacity:0.9;
 	}
 
-	#Copyright {
+	#footer #Copyright {
 		color: black;
 		text-align:center;
 		width:max-content;
