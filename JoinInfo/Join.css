@@ -3,7 +3,7 @@
 /*webページ全体で共通するスタイルをレイヤーとして読み込んでいる*/
 @import url("../Standard.css") layer(standard);
 
-@layer normalize, standard, Layout, appearance;
+@layer normalize, standard, Layout, appearance, animation;
 /*マジックナンバー防ぐよう*/
 :root {
     --SectionBorder: 20px;
@@ -11,6 +11,7 @@
     --Z_level_1: 1;
     --Z_level_2: 2;
     --Z_level_3: 3;
+    --GearSize:350px;
 }
 
 /*margin positionなどコンテンツの配置に関するレイヤー*/
@@ -40,15 +41,16 @@
     }
     #TopLeftGear {
         position: absolute;
-        top: 0px;
-        left: 0px;
+        /*50pxはnavのheightによる物*/
+        top: calc((var(--GearSize) / -2) + 50px);
+        left: calc(var(--GearSize) / -2);
         z-index: var(--Z_level_2);
     }
 
     #BottomRightGear {
         position: absolute;
-        bottom: 0px;
-        right: 0px;
+        bottom: calc(var(--GearSize) / -2);
+        right: calc(var(--GearSize) / -2);
         z-index: var(--Z_level_2);
     }
 
@@ -80,6 +82,7 @@
     }
 
     header {
+        overflow:hidden;
         height: 280px;
     }
 
@@ -118,6 +121,14 @@
         border: 0px solid dimgray;
         border-radius: 40px;
     }
+    #TopLeftGear {
+        width: var(--GearSize);
+        animation: RotateZ forwards 8s linear infinite normal;
+    }
+    #BottomRightGear {
+        width: var(--GearSize);
+        animation: RotateZ forwards 8s linear infinite normal;
+    }
     .section {
         background-color: white;
         border-radius: var(--SectionH2BorderRadius) var(--SectionH2BorderRadius) 0px 0px;
@@ -148,6 +159,15 @@
     }
 
 }
+@layer animation{
+    @keyframes RotateZ{
+        0% {
+        }
+        100%{
+            transform:rotateZ(360deg);
+        }
+    }
+}
 /*横幅が790px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
 @media (max-width:790px) {
     #HeaderTitle1{
@@ -157,7 +177,9 @@
         font-size: 25px;
         bottom: 45px;
     }
-
+    #BottomRightGear, #TopLeftGear {
+        --GearSize: 300px;
+    }
     .info-text {
         font-size: 20px;
     }
