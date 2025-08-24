@@ -98,18 +98,22 @@
         width: max-content;
         font-family: sans-serif;
         font-size: 70px;
-        color: white;
-        text-shadow: 0px     0px 2px black,
-                     0px     0px 2px black,
-                     0px     0px 2px black,
-                     0px     0px 2px black,
+        color: rgb(0,86,179);
+        text-shadow:-1.5px  -1.5px 0px rgba(255,255,255,1),
+                      -2px    -2px 0px rgba(255,255,255,0.83),
+                    -2.5px  -2.5px 0px rgba(255,255,255,0.664),
+                      -3px    -3px 0px rgba(255,255,255,0.498),
+                    -3.5px  -3.5px 0px rgba(255,255,255,0.332),
+                      -4px    -4px 0px rgba(255,255,255,0.166),
 
-                   1.5px   1.5px 0px blue,
-                     2px     2px 0px blue,
-                   2.5px   2.5px 0px blue,
-                     3px     3px 0px blue,
-                   3.5px   3.5px 0px blue,
-                     4px     4px 0px blue;
+
+
+                     1.5px   1.5px 0px rgba(0,0,0,1),
+                       2px     2px 0px rgba(0,0,0,0.83),
+                     2.5px   2.5px 0px rgba(0,0,0,0.664),
+                       3px     3px 0px rgba(0,0,0,0.498),
+                     3.5px   3.5px 0px rgba(0,0,0,0.332),
+                       4px     4px 0px rgba(0,0,0,0.166);
               
     }
 
@@ -178,14 +182,28 @@
 /*横幅が790px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
 @media (max-width:790px) {
     #HeaderTitle1{
-        font-size:35px;
+        font-size:38px;
+        text-shadow:-0.416px   -0.416px 0px rgba(255,255,255,1),
+                    -0.833px   -0.833px 0px rgba(255,255,255,0.83),
+                    -1.250px   -1.250px 0px rgba(255,255,255,0.664),
+                    -1.666px   -1.666px 0px rgba(255,255,255,0.498),
+                    -2.083px   -2.083px 0px rgba(255,255,255,0.332),
+                    -2.500px   -2.500px 0px rgba(255,255,255,0.166),
+
+                      0.416px   0.416px 0px rgba(0,0,0,1),
+                      0.833px   0.833px 0px rgba(0,0,0,0.83),
+                      1.250px   1.250px 0px rgba(0,0,0,0.664),
+                      1.666px   1.666px 0px rgba(0,0,0,0.498),
+                      2.083px   2.083px 0px rgba(0,0,0,0.332),
+                      2.500px   2.500px 0px rgba(0,0,0,0.166);
+
     }
     #HeaderTitle2 {
         font-size: 25px;
         bottom: 45px;
     }
     #BottomRightGear, #TopLeftGear {
-        --GearSize: 350px;
+        --GearSize: 300px;
     }
     .info-text {
         font-size: 20px;
