@@ -95,20 +95,20 @@
 
 
     #HeaderTitle1 {
-        font-family: sans-serif;
         width: max-content;
+        font-family: sans-serif;
         font-size: 60px;
         color: white;
-        text-shadow: 2px 2px 15px blue;
-        -webkit-text-stroke-width: 5px;
+        text-shadow: 2px 2px 10px blue;
+        -webkit-text-stroke-width: 3px;
         -webkit-text-stroke-color: black;
         /*文字→輪郭から輪郭→文字の順で描画させる*/
         paint-order: stroke;
     }
 
     #HeaderTitle2 {
-        font-family: sans-serif;
         width: max-content;
+        font-family: sans-serif;
         font-size: 40px;
         letter-spacing: 10px;
         color: white;
@@ -178,7 +178,7 @@
         bottom: 45px;
     }
     #BottomRightGear, #TopLeftGear {
-        --GearSize: 300px;
+        --GearSize: 350px;
     }
     .info-text {
         font-size: 20px;
@@ -189,5 +189,3 @@
     }
 
 }
-
-
