@@ -97,13 +97,20 @@
     #HeaderTitle1 {
         width: max-content;
         font-family: sans-serif;
-        font-size: 60px;
+        font-size: 70px;
         color: white;
-        text-shadow: 2px 2px 10px blue;
-        -webkit-text-stroke-width: 3px;
-        -webkit-text-stroke-color: black;
-        /*文字→輪郭から輪郭→文字の順で描画させる*/
-        paint-order: stroke;
+        text-shadow: 0px     0px 2px black,
+                     0px     0px 2px black,
+                     0px     0px 2px black,
+                     0px     0px 2px black,
+
+                   1.5px   1.5px 0px blue,
+                     2px     2px 0px blue,
+                   2.5px   2.5px 0px blue,
+                     3px     3px 0px blue,
+                   3.5px   3.5px 0px blue,
+                     4px     4px 0px blue;
+              
     }
 
     #HeaderTitle2 {
