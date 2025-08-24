@@ -11,7 +11,7 @@
     --Z_level_1: 1;
     --Z_level_2: 2;
     --Z_level_3: 3;
-    --GearSize:375px;
+    --GearSize:350px;
 }
 
 /*margin positionなどコンテンツの配置に関するレイヤー*/
@@ -189,4 +189,5 @@
     }
 
 }
+
 
