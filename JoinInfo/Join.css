@@ -99,21 +99,21 @@
         font-family: sans-serif;
         font-size: 70px;
         color: rgb(0,86,179);
-        text-shadow:-1.5px  -1.5px 0px rgba(255,255,255,1),
-                      -2px    -2px 0px rgba(255,255,255,0.83),
-                    -2.5px  -2.5px 0px rgba(255,255,255,0.664),
-                      -3px    -3px 0px rgba(255,255,255,0.498),
-                    -3.5px  -3.5px 0px rgba(255,255,255,0.332),
-                      -4px    -4px 0px rgba(255,255,255,0.166),
+        text-shadow:-0.5px  -0.5px 0px rgba(255,255,255,1),
+                      -1px    -1px 0px rgba(255,255,255,0.83),
+                    -1.5px  -1.5px 0px rgba(255,255,255,0.664),
+                      -2px    -2px 0px rgba(255,255,255,0.498),
+                    -2.5px  -2.5px 0px rgba(255,255,255,0.332),
+                      -3px    -3px 0px rgba(255,255,255,0.166),
 
 
 
-                     1.5px   1.5px 0px rgba(0,0,0,1),
-                       2px     2px 0px rgba(0,0,0,0.83),
-                     2.5px   2.5px 0px rgba(0,0,0,0.664),
-                       3px     3px 0px rgba(0,0,0,0.498),
-                     3.5px   3.5px 0px rgba(0,0,0,0.332),
-                       4px     4px 0px rgba(0,0,0,0.166);
+                     0.5px   0.5px 0px rgba(0,0,0,1),
+                       1px     1px 0px rgba(0,0,0,0.83),
+                     1.5px   1.5px 0px rgba(0,0,0,0.664),
+                       2px     2px 0px rgba(0,0,0,0.498),
+                     2.5px   2.5px 0px rgba(0,0,0,0.332),
+                       3px     3px 0px rgba(0,0,0,0.166);
               
     }
 
