@@ -1,7 +1,7 @@
 ﻿/*ユーザーエージェントスタイルシートを統一するスタイルシートをlayerとして読み込んでいる、*/
-@import url("../Normalize.css") layer(normalize);
+@import url("../CommonFiles/Normalize.css") layer(normalize);
 /*webページ全体で共通するスタイルをレイヤーとして読み込んでいる*/
-@import url("../Standard.css") layer(standard);
+@import url("../CommonFiles/Standard.css") layer(standard);
 
 @layer normalize, standard, Layout, appearance;
 
