@@ -14,8 +14,7 @@
 */
 /*マジックナンバー防ぐよう*/
 :root {
-    --hiraki_doai:1;
-    --width:100
+    --Header-height: 280px;
 }
 /*margin transformなどコンテンツ外に関するレイヤー*/
 @layer Layout {
@@ -37,7 +36,7 @@
         /*140pxはheaderのheight=280　⇒headerのheight/2=280/2=140の流れで出た*/
         /*rotateZで回転させてから y と xの変形関数を適用させている。
         */
-        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(calc(-50% - 70px)) translateX(calc(-50% - 160px));
+        transform: rotateZ(calc(-1 * atan2(var(--Header-height), 100vw))) translateY(calc(-50% - 70px)) translateX(calc(-50% - 160px));
         z-index: 3;
     }
 
@@ -46,7 +45,7 @@
         top: 50%;
         left: 50%;
         transform-origin: left;
-        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(-50%) translateX(-50%);
+        transform: rotateZ(calc(-1 * atan2(var(--Header-height), 100vw))) translateY(-50%) translateX(-50%);
         z-index: 3;
     }
 
@@ -84,7 +83,7 @@
         background-color: floralwhite;
     }
     header {
-        height: 280px;
+        height: var(--Header-height);
         background-color:black;
     }
     header canvas{
@@ -187,7 +186,7 @@
 @media (max-width:790px) {
     header #Title1 {
         font-size: 25px;
-        transform: rotateZ(calc(-1 * atan2(280px, 100vw))) translateY(calc(-50% - 50px)) translateX(calc(-50% - 70px));
+        transform: rotateZ(calc(-1 * atan2(var(--Header-height), 100vw))) translateY(calc(-50% - 50px)) translateX(calc(-50% - 70px));
     }
 
     header #Title2 {

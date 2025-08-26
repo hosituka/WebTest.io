@@ -41,8 +41,7 @@
     }
     #TopLeftGear {
         position: absolute;
-        /*50pxはnavのheightによる物*/
-        top: calc((var(--GearSize) / -2) + 50px);
+        top: calc((var(--GearSize) / -2) + var(--nav-height));
         left: calc(var(--GearSize) / -2);
         z-index: var(--Z_level_2);
     }
