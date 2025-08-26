@@ -41,14 +41,6 @@
 	#nav ul li a {
 		display: block;
 	}
-	#NoFixedContainer{
-		display:flex;
-		flex-direction:column;
-		justify-content:center;
-	}
-	main{
-		flex:1;
-	}
 	#footer{
 		position:sticky;
 		top:100vh;
@@ -86,9 +78,6 @@
 		padding: 10px 10px; /* PC表示でのpaddingを少し調整 */
 		text-decoration: none;
 		transition: background-color 0.3s;
-	}
-	#NoFixedContainer{
-		min-height:100vh;
 	}
 
 	#footer {
