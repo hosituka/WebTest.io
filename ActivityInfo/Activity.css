@@ -93,10 +93,11 @@
     }
     header #Title1 {
         font-family: sans-serif;
-        width:max-content;
+        width: max-content;
         font-size: 40px;
         letter-spacing: 10px;
         color: white;
+        font-weight: bold;
     }
 
     header #Title2 {

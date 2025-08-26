@@ -131,6 +131,7 @@
         paint-order: stroke;
         border: 0px solid dimgray;
         border-radius: 40px;
+        font-weight:bold;
     }
     #TopLeftGear {
         width: var(--GearSize);
