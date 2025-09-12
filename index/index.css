@@ -11,7 +11,7 @@
     --Z_level_2: 2;
 }
 
-/*margin paddingなどコンテンツの配置に関するレイヤー*/
+/*margin positionなどコンテンツの配置に関するレイヤー*/
 @layer Layout {
     header {
         position: relative;
