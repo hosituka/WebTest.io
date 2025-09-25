@@ -4,10 +4,11 @@
 @import url("../CommonFiles/Standard.css") layer(standard);
 
 @layer normalize, standard, Layout, appearance, animation;
-/*マジックナンバー防ぐよう*/
+/*マジックナンバー防ぐよう
 :root {
 
 }
+*/
 
 /*margin positionなどコンテンツの配置に関するレイヤー*/
 @layer Layout {
@@ -15,7 +16,7 @@
         position:relative;
     }
 
-    header #Title {
+    #Title {
         position: absolute;
         display: block;
         bottom: 15px;
@@ -59,7 +60,7 @@
         background-color: white;
     }
 
-    header #Title {
+    #Title {
         font-family: sans-serif;
         width: 100%;
         text-align: center;

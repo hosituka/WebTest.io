@@ -102,7 +102,7 @@
         left: 50%;
         /* 2. 要素自身の幅の50%分、左にずらす */
         transform: translateX(-50%);
-        bottom: 50px
+        bottom: 50px;
     }
 
     #HeaderLogo img {
@@ -114,8 +114,7 @@
         left: 50%;
         /* 2. 要素自身の幅の50%分、左にずらす */
         transform: translateX(-50%);
-        /* 3. 折り返しさせずにコンテンツ分の幅を確保する。
-        */
+        /* 3. 折り返しさせずにコンテンツ分の幅を確保する。*/
         width: max-content;
         font-size: 35px
     }
