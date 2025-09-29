@@ -72,7 +72,18 @@
     }
 
 
+    .SoftCarouselContainer{
+        position:relative;
+        overflow: hidden;
+    }
+    .SoftCarousel{
+        display: flex;
+        gap:20px;
+    }
 
+    .SoftCardImg{
+        margin-top: 10px;
+    }
 
 }
 
@@ -173,17 +184,48 @@
         outline: 7px solid white;
         border-radius: 8px 8px;
     }
-    .GameWindow{
-        width: 100%;
-        height: 720px;
-        border: 0px;
-    }
     .HardSectionImg {
         width: 250px;
         border: 1px solid white;
         outline:7px solid black;
         border-radius:8px 8px;
     }
+    .SoftCarouselContainer{
+        width:100%;
+        background-color: white;
+        padding-bottom: 20px;
+    }
+    .SoftCarousel{
+        width:100%;
+        cursor: grab;
+        user-select: none;
+    }
+
+    .SoftCard{
+        width:300px;
+        text-align: center;
+        flex-shrink: 0;
+        background-color: black;
+        border: 1px solid black;
+        box-shadow: 4px 4px 8px rgba(0,191,255,0.4); /*deepskyblueの透明度を0.7*/
+    }
+    .SoftCardTitle{
+        font-family: sans-serif;
+        text-align: center;
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
+        color: deepskyblue;
+    }
+    .SoftCardImg{
+        width:250px;
+        border-radius: 8px 8px;
+
+    }
+    .SoftCardExplain{
+        line-height: 30px;
+        color:white;
+    }
+
 
 }
 /*横幅が790px以下になった時に適用するスタイル。ここではレイアウトとappearanceの区分はない*/
