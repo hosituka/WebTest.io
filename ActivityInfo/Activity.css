@@ -78,9 +78,10 @@
     }
     .SoftCarousel{
         display: flex;
-        gap:20px;
     }
-
+    .SoftCard{
+        margin-left: 20px;
+    }
     .SoftCardImg{
         margin-top: 10px;
     }

@@ -15,18 +15,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let startX;
     let currentX = 0;
-    let speed = 1;
+    let speed = 3;
 
     let test = 1;
-    console.log(carousel.scrollWidth);
+
+    const scrollHalfWidth = carousel.scrollWidth / 2;   
     //恒常的(毎フレーム)走る処理
     autoScroll();
     function autoScroll() {
         currentX -= speed;
-        if (Math.abs(currentX) >= carousel.scrollWidth / 2) {
+        if (currentX <= -scrollHalfWidth) {
             currentX = 0;
+            carousel.style.transform = `translateX(${currentX}px)`;
+            console.log(currentX);
+
         }
         carousel.style.transform = `translateX(${currentX}px)`;
+
         console.log(currentX);
         requestAnimationFrame(autoScroll);
     }
