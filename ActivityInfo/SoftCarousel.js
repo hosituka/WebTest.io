@@ -23,11 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentDragX = 0;
     let dragDeltaX = 0;
 
+    const scrollHalfWidth = carousel.scrollWidth / 2;   
+
     //スマホ用の識別子
     let TimerId;
 
 
-    const scrollHalfWidth = carousel.scrollWidth / 2;   
     //イベント関係
     ///PCのタッチイベント
     carousel.addEventListener("mouseenter",() => {
@@ -63,10 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
         currentDragX = touch.touches[0].pageX;
     })
     carousel.addEventListener("touchend",(touch) => {
-        TimerId = setTimeout(StartAutoScroll,1000);
+        TimerId = setTimeout(StartAutoScroll,2000);
     })
     carousel.addEventListener("touchecancel",(touch) => {
-        TimerId = setTimeout(StartAutoScroll,1000);
+        TimerId = setTimeout(StartAutoScroll,2000);
     })
 
     function StartAutoScroll(){
