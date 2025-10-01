@@ -13,26 +13,91 @@ document.addEventListener("DOMContentLoaded", () => {
         carousel.appendChild(cloneItems);
     });
 
-    let startX;
+    //スマホ、PC両方で使う識別子
     let currentX = 0;
     let speed = 3;
 
-    let test = 1;
+    let hovering = false;
+    let dragging = false;
+    let prevDragX = 0;
+    let currentDragX = 0;
+    let dragDeltaX = 0;
 
     const scrollHalfWidth = carousel.scrollWidth / 2;   
+
+    //スマホ用の識別子
+    let TimerId;
+
+
+    //イベント関係
+    ///PCのタッチイベント
+    carousel.addEventListener("mouseenter",() => {
+        hovering = true;
+    })
+    carousel.addEventListener("mousedown",(mouse) => {
+        dragging = true;
+        prevDragX = mouse.pageX;
+        currentDragX = mouse.pageX;
+    })
+    carousel.addEventListener("mousemove",(mouse) => {
+        if(!dragging) return;
+        currentDragX = mouse.pageX;
+    })
+    carousel.addEventListener("mouseup",() => {
+        dragging = false;
+    })
+    carousel.addEventListener("mouseleave",() => {
+        dragging = false;
+        hovering = false;
+    })
+
+    ///スマホのタッチイベント
+    carousel.addEventListener("touchstart",(touch) => {
+        hovering = true;
+        dragging = true;
+        prevDragX = touch.touches[0].pageX;
+        currentDragX = touch.touches[0].pageX;
+        clearTimeout(TimerId);
+    })
+    carousel.addEventListener("touchmove",(touch) => {
+        if(!dragging) return;
+        currentDragX = touch.touches[0].pageX;
+    })
+    carousel.addEventListener("touchend",(touch) => {
+        TimerId = setTimeout(StartAutoScroll,2000);
+    })
+    carousel.addEventListener("touchecancel",(touch) => {
+        TimerId = setTimeout(StartAutoScroll,2000);
+    })
+
+    function StartAutoScroll(){
+        dragging = false;
+        hovering = false;
+    }
+    
+
+
     //恒常的(毎フレーム)走る処理
+    let test = 0;
     autoScroll();
     function autoScroll() {
-        currentX -= speed;
-        if (currentX <= -scrollHalfWidth) {
-            currentX = 0;
-            carousel.style.transform = `translateX(${currentX}px)`;
-            console.log(currentX);
-
+        dragDeltaX = currentDragX - prevDragX
+        if(!hovering & !dragging){
+            currentX -= speed;
         }
+        else if(hovering & dragging){
+            currentX += dragDeltaX;
+        }
+        currentX = Repeat(currentX,-scrollHalfWidth)
         carousel.style.transform = `translateX(${currentX}px)`;
-
-        console.log(currentX);
+        prevDragX = currentDragX;
         requestAnimationFrame(autoScroll);
     }
+
 });
+
+function Repeat(t,length){
+    return t - Math.floor(t / length) * length;
+}
+
+
