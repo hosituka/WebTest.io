@@ -13,26 +13,53 @@ document.addEventListener("DOMContentLoaded", () => {
         carousel.appendChild(cloneItems);
     });
 
-    let startX;
     let currentX = 0;
     let speed = 3;
 
-    let test = 1;
+    let isDragging = false;
+    let prevMouseX = 0;
+    let currentMouseX = 0;
+    let mouseDeltaX = 0;
+
 
     const scrollHalfWidth = carousel.scrollWidth / 2;   
+    //イベント関係
+    carousel.addEventListener("mousedown",(mouse) => {
+        isDragging = true;
+        prevMouseX = mouse.pageX;
+        currentMouseX = mouse.pageX;
+    })
+    carousel.addEventListener("mousemove",(mouse) => {
+        if(!isDragging) return;
+        currentMouseX = mouse.pageX;
+    })
+    carousel.addEventListener("mouseup",() => {
+        isDragging = false;
+    })
+    carousel.addEventListener("mouseleave",() => {
+        isDragging = false;
+    })
     //恒常的(毎フレーム)走る処理
+    let test = 0;
     autoScroll();
     function autoScroll() {
-        currentX -= speed;
-        if (currentX <= -scrollHalfWidth) {
-            currentX = 0;
-            carousel.style.transform = `translateX(${currentX}px)`;
-            console.log(currentX);
-
+        mouseDeltaX = currentMouseX - prevMouseX
+        if(!isDragging){
+            currentX -= speed;
         }
+        else{
+            currentX += mouseDeltaX;
+        }
+        currentX = Repeat(currentX,-scrollHalfWidth)
         carousel.style.transform = `translateX(${currentX}px)`;
-
-        console.log(currentX);
+        prevMouseX = currentMouseX;
         requestAnimationFrame(autoScroll);
     }
+
 });
+
+function Repeat(t,length){
+    return t - Math.floor(t / length) * length;
+}
+
+
