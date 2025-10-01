@@ -13,46 +13,83 @@ document.addEventListener("DOMContentLoaded", () => {
         carousel.appendChild(cloneItems);
     });
 
+    //スマホ、PC両方で使う識別子
     let currentX = 0;
     let speed = 3;
 
-    let isDragging = false;
-    let prevMouseX = 0;
-    let currentMouseX = 0;
-    let mouseDeltaX = 0;
+    let hovering = false;
+    let dragging = false;
+    let prevDragX = 0;
+    let currentDragX = 0;
+    let dragDeltaX = 0;
+
+    //スマホ用の識別子
+    let TimerId;
 
 
     const scrollHalfWidth = carousel.scrollWidth / 2;   
     //イベント関係
+    ///PCのタッチイベント
+    carousel.addEventListener("mouseenter",() => {
+        hovering = true;
+    })
     carousel.addEventListener("mousedown",(mouse) => {
-        isDragging = true;
-        prevMouseX = mouse.pageX;
-        currentMouseX = mouse.pageX;
+        dragging = true;
+        prevDragX = mouse.pageX;
+        currentDragX = mouse.pageX;
     })
     carousel.addEventListener("mousemove",(mouse) => {
-        if(!isDragging) return;
-        currentMouseX = mouse.pageX;
+        if(!dragging) return;
+        currentDragX = mouse.pageX;
     })
     carousel.addEventListener("mouseup",() => {
-        isDragging = false;
+        dragging = false;
     })
     carousel.addEventListener("mouseleave",() => {
-        isDragging = false;
+        dragging = false;
+        hovering = false;
     })
+
+    ///スマホのタッチイベント
+    carousel.addEventListener("touchstart",(touch) => {
+        hovering = true;
+        dragging = true;
+        prevDragX = touch.touches[0].pageX;
+        currentDragX = touch.touches[0].pageX;
+        clearTimeout(TimerId);
+    })
+    carousel.addEventListener("touchmove",(touch) => {
+        if(!dragging) return;
+        currentDragX = touch.touches[0].pageX;
+    })
+    carousel.addEventListener("touchend",(touch) => {
+        TimerId = setTimeout(StartAutoScroll,1000);
+    })
+    carousel.addEventListener("touchecancel",(touch) => {
+        TimerId = setTimeout(StartAutoScroll,1000);
+    })
+
+    function StartAutoScroll(){
+        dragging = false;
+        hovering = false;
+    }
+    
+
+
     //恒常的(毎フレーム)走る処理
     let test = 0;
     autoScroll();
     function autoScroll() {
-        mouseDeltaX = currentMouseX - prevMouseX
-        if(!isDragging){
+        dragDeltaX = currentDragX - prevDragX
+        if(!hovering & !dragging){
             currentX -= speed;
         }
-        else{
-            currentX += mouseDeltaX;
+        else if(hovering & dragging){
+            currentX += dragDeltaX;
         }
         currentX = Repeat(currentX,-scrollHalfWidth)
         carousel.style.transform = `translateX(${currentX}px)`;
-        prevMouseX = currentMouseX;
+        prevDragX = currentDragX;
         requestAnimationFrame(autoScroll);
     }
 
