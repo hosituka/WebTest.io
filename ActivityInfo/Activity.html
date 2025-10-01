@@ -8,6 +8,8 @@
     <link rel="icon" href="../CommonFiles/素材/ファビコン.png" />
 </head>
 <body>
+    <script src="Carousel.js"></script>
+
     <nav>
         <ul>
             <li><a href="../index/index.html">ホーム</a></li>
@@ -37,7 +39,6 @@
             </section>
         </div>
         <div class="SoftCarouselContainer">
-            <script src="Carousel1.js" data-speed="-3" data-target_query=".SoftCarousel"></script>   
             <div class="SoftCarousel">
                 <Section class="SoftCard">
                     <h2 class="SoftCardTitle">ブロック崩し</h2>
@@ -99,13 +100,9 @@
                         ※スマホは対応してますが。横向き推奨です
                     </p>
                 </Section>
-
-
-
-
-
             </div>
         </div>
+        <script>generateCarousel(".SoftCarousel",-3)</script>
         <div id="HSC">
             <section class="HS">
                 <h2 class="HardSectionTitle">ハード部門</h2>
@@ -120,7 +117,6 @@
             </section>
         </div>
         <div class="HardCarouselContainer">
-            <script src="Carousel2.js" data-speed="3" data-target_query=".HardCarousel"></script>   
             <div class="HardCarousel">
                 <Section class="HardCard">
                     <h2 class="HardCardTitle">活動内容1</h2>
@@ -166,7 +162,7 @@
 
             </div>
         </div>
-
+        <script>generateCarousel(".HardCarousel",3)</script>
     </main>
     <footer>
         <p id="Copyright">© 2025 ハードソフト開発部 All Rights Reserved.</p>
