@@ -212,6 +212,7 @@
         cursor: grab;
         user-select: none;
         width:max-content;
+        will-change: transform;
     }
 
     .SoftCard{
@@ -220,7 +221,6 @@
         background-color: black;
         border: 1px solid black;
         box-shadow: 4px 4px 8px rgba(0,191,255,0.4); /*deepskyblueの透明度を0.7*/
-        transform:translateZ(0);
     }
     .SoftCardTitle{
         font-family: sans-serif;
@@ -253,6 +253,7 @@
         user-select: none;
         background-color:black;
         width:max-content;
+        will-change: transform;
     }
 
     .HardCard{
@@ -261,7 +262,6 @@
         background-color: white;
         border: 1px solid white;
         box-shadow: 4px 4px 8px rgba(255,165,0,0.9);/*orangeの透明度を0.7*/
-        transform:translateZ(0);
     }
     .HardCardTitle{
         font-family: sans-serif;
