@@ -80,6 +80,13 @@
     }
     .SoftCard{
         margin-left:20px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .SoftCardButton{
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
     .SoftCardImg{
         margin-top: 10px;
@@ -217,6 +224,7 @@
 
     .SoftCard{
         width:300px;
+        height:max-content;
         text-align: center;
         background-color: black;
         border: 1px solid black;
@@ -225,12 +233,27 @@
     .SoftCardTitle{
         font-family: sans-serif;
         text-align: center;
+        width:100%;
         padding: 10px;
         background-color: rgb(255, 255, 255);
         color: deepskyblue;
     }
-    a {
-        -webkit-user-drag: none;
+    .SoftCardButton {
+        width:200px;
+        padding:10px;
+        background-color: deepskyblue;
+        color:white;
+        border-radius: 20px;
+        box-shadow: 0 5px 0 rgb(0, 120, 160); /*deepskyblueの透明度を0.7*/
+        text-decoration: none;
+    }
+    .SoftCardButton:hover{
+        background-color: rgb(0, 120, 160);
+        box-shadow: 0 5px 0 rgb(0, 85, 114); /*deepskyblueの透明度を0.7*/
+    }
+    .SoftCardButton:active{
+        box-shadow: none;
+        transform: translateY(5px);
     }
     .SoftCardImg{
         width:250px;
@@ -238,11 +261,6 @@
         outline: 5px solid white;
         border-radius: 8px 8px;
         -webkit-user-drag: none;
-    }
-    .SoftCardExplain{
-        line-height: 30px;
-        color:white;
-
     }
     .HardCarouselContainer{
         background-color: black;
