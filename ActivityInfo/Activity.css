@@ -205,18 +205,18 @@
         border-radius:8px 8px;
     }
     .SoftCarouselContainer{
-        background-color: white;
         padding-bottom: 20px;
+        background-color: white;
     }
     .SoftCarousel{
         cursor: grab;
         user-select: none;
+        width:max-content;
     }
 
     .SoftCard{
         width:300px;
         text-align: center;
-        flex-shrink: 0;
         background-color: black;
         border: 1px solid black;
         box-shadow: 4px 4px 8px rgba(0,191,255,0.4); /*deepskyblueの透明度を0.7*/
@@ -233,13 +233,13 @@
         width:250px;
         border:1px solid black;
         outline: 5px solid white;
-
         border-radius: 8px 8px;
 
     }
     .SoftCardExplain{
         line-height: 30px;
         color:white;
+
     }
     .HardCarouselContainer{
         background-color: black;
@@ -248,12 +248,13 @@
     .HardCarousel{
         cursor: grab;
         user-select: none;
+        background-color:black;
+        width:max-content;
     }
 
     .HardCard{
         width:300px;
         text-align: center;
-        flex-shrink: 0;
         background-color: white;
         border: 1px solid white;
         box-shadow: 4px 4px 8px rgba(255,165,0,0.9);/*orangeの透明度を0.7*/
