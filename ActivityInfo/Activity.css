@@ -237,7 +237,7 @@
         border:1px solid black;
         outline: 5px solid white;
         border-radius: 8px 8px;
-
+        -webkit-user-drag: none;
     }
     .SoftCardExplain{
         line-height: 30px;
