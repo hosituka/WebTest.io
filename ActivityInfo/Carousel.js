@@ -65,10 +65,10 @@ class carousel{
             currentDragX = touch.touches[0].pageX;
         })
         carousel.addEventListener("touchend",(touch) => {
-            TimerId = setTimeout(StartAutoScroll,2000);
+            TimerId = setTimeout(StartAutoScroll,1000);
         })
         carousel.addEventListener("touchecancel",(touch) => {
-            TimerId = setTimeout(StartAutoScroll,2000);
+            TimerId = setTimeout(StartAutoScroll,1000);
         })
 
         function StartAutoScroll(){
@@ -102,6 +102,7 @@ function Repeat(t,length){
 function generateCarousel(targetQuery,speed){
    new carousel(targetQuery,speed);
 }
+
 
 
 
