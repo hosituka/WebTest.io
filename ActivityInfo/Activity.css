@@ -229,6 +229,9 @@
         background-color: rgb(255, 255, 255);
         color: deepskyblue;
     }
+    a {
+        -webkit-user-drag: none;
+    }
     .SoftCardImg{
         width:250px;
         border:1px solid black;
@@ -272,6 +275,7 @@
         border:1px solid white;
         outline: 5px solid black;
         border-radius: 8px 8px;
+        -webkit-user-drag: none;
 
     }
     .HardCardExplain{
