@@ -1,0 +1,209 @@
+/* このcssは各webページで共通するスタイルが記述されています。 */
+
+
+@layer normalize,cssReset,  layout, appearance,component;
+/*ユーザーエージェントスタイルシートを統一するスタイルシートをlayerとして読み込んでいる、*/
+@import url("Normalize.css") layer(normalize);
+
+@import url("Component.css") layer(component);
+/*マジックナンバー防ぐよう*/
+:root{
+
+	--campus-yellow:rgb(255, 200, 0);
+	--campus-blue:rgb(0, 144, 192);
+	--light-blue:rgb(183, 237, 255);
+	--light-yellow:rgb(255, 228, 132);
+	--min-nav-height:50px;
+}
+@Layer cssReset{
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	body,
+	h1, h2, h3, h4, h5, h6,
+	p,
+	ul, ol, li,
+	figure, figcaption, blockquote, dl, dd {
+		margin: 0;
+		padding: 0;
+	}
+}
+/*margin paddingなどコンテンツの配置に関するレイヤー*/
+@layer layout {
+	my-nav {
+		position: fixed;
+		z-index: 1000;
+		top: 0px;
+		display:flex;
+		justify-content: space-between;
+		.website-logo{
+			margin-left: 20px;
+		}
+		.nav-links{
+			position:relative;
+			margin-right: 20px;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			a{
+				display:flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+		.humburger-button{
+			position:absolute;
+			top:0px;
+			right:20px;
+			display:none;
+			& > * {
+				transform-origin: center;
+				position:absolute;
+				left:0px;
+			}
+			.bar1{
+				transform:translateY(-15px);
+			}
+			.bar2{
+				transform:translateY(-3px);
+			}
+			.bar3{
+				transform:translateY(9px);
+			}
+		}
+
+	}
+	footer{
+		position:sticky;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		top:100vh;
+	}
+}
+
+/*コンテンツ内のデザインに着目したレイヤー*/
+@layer appearance {
+	body{
+		height:100dvh;
+		my-nav {
+			width: 100dvw;
+			height:var(--min-nav-height);
+			opacity: 0.9;
+			background-color: floralwhite;
+			border-bottom: 2px solid black;
+			overflow-y: hidden;
+			.website-logo{
+				margin-left:10px;
+				padding-right:20px;
+				height:var(--min-nav-height);
+			}
+			.nav-links{
+				a{
+					flex-shrink: 0;
+					height:calc(var(--min-nav-height) - 10px);
+					font-size: 20px;
+					height:50px;
+					color: black;
+					text-decoration: none;
+					transition: background-color 0.3s;
+					font-family:"Noto Sans JP" , sans-serif;
+					&:hover{
+						background-color: #555;
+						color:white;
+					}
+					&:first-child{
+						border-left:1px solid black;}
+					&:not(:last-child){
+						border-right:1px solid black;}	
+				}
+				
+			}
+			.humburger-button{
+				width:40px;
+				height:var(--min-nav-height);
+				border:none;
+				padding:0px;
+				background-color: transparent;
+				& > * {
+					width:100%;
+					height:5px;
+					background-color: black;
+				}
+				.bar1{
+					transition:transform 0.3s ease-out;}
+				.bar2{
+					transition:opacity 0.3s ease-out;}
+				.bar3{
+					transition:transform 0.3s ease-out;}
+			}
+
+		}
+		footer {
+			width:100%;
+			height:50px;
+			border-top:1px solid black;
+			background-color: var(--campus-yellow);
+			opacity:0.9;
+			.copyright{
+				color: black;
+				font-family:"Noto Sans JP" , sans-serif;
+			}
+		}
+	}
+}
+/*横幅が840px以下になった時に適用するスタイル。ここではレイアウトと外観の区分はないとする*/
+@media (max-width:840px) {
+	my-nav{
+		transition:height 0.3s ease-in-out;
+		.website-logo{
+			position:absolute;
+			border-right:none;
+		}
+		.nav-links{
+			margin:0px;
+			flex-direction: column;
+			width:100%;
+			padding-top:var(--min-nav-height);
+			transition:transform 0.3s ease-in-out;
+			left:calc(-1 * 100dvw);
+			a{
+				display: flex;
+				width:100%;
+				border:none;
+				&:first-child{
+					border-top:1px solid black;
+				}
+				&:not(:last-child){
+					border-bottom:1px solid black;
+				}	
+			}
+		}
+		.humburger-button{
+			display:block;
+		}
+	}
+	my-nav.open-humburger{
+		height:var(--nav-links-height);
+		.humburger-button{
+			.bar1{
+				transform:translateY(-3px) rotateZ(45deg);
+			}
+			.bar2{
+				opacity:0;
+			}
+			.bar3{
+				transform:translateY(-3px) rotateZ(-45deg);
+			}
+		}
+		.nav-links{
+			height:auto;
+			display:flex;
+			transform:translateX(100dvw);
+		}
+	}
+}
+
